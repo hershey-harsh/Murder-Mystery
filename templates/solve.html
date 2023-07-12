@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/style.css">
+  <title>Murder Mystery Game - Solve</title>
+</head>
+<body>
+  <header>
+    <h1>Murder Mystery Game</h1>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Solve the Mystery</h2>
+      <p>Use your detective skills and intuition to solve the murder mystery. Choose the correct suspect from the list below:</p>
+      <div class="form-container">
+        <form action="/solve" method="post">
+          <div class="suspects">
+            <input type="radio" id="suspect1" name="suspect" value="John Doe">
+            <label for="suspect1">John Doe</label><br>
+            <input type="radio" id="suspect2" name="suspect" value="Emily Smith">
+            <label for="suspect2">Emily Smith</label><br>
+            <input type="radio" id="suspect3" name="suspect" value="Robert Johnson">
+            <label for="suspect3">Robert Johnson</label><br>
+          </div>
+          <input type="submit" value="Submit">
+        </form>
+        
+        {% if result %}
+        <div class="result">
+          <h3>Result:</h3>
+          <p>{{ result }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+  </main>
+</body>
+</html>
